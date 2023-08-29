@@ -36,24 +36,6 @@ router.post('/login', async(request, response) => {
         }
         const token = jwtGenerator(username);
         return response.status(200).json({ token });
-        //check if user exists
-        // if(user.rows.length === 0) {
-        //     }
-        //check if password is same
-        // const validPassword = await bycrypt.compare(password, user.rows[0].user_password);
-
-        // if (!validPassword) {
-        // return response.status(401).send("Email or Password Incorrect");
-        // }
-        //grant the token
-
-        // const token = jwtGenerator(user.rows[0].user_id);
-
-
-        // return response.json({ token });
-
-
-
 
     } catch (err) {
         response.set(401).send(err.message);
